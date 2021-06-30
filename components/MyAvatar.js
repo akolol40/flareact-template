@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
-import { srv } from './../Config'
+const srv = 'https://api.agro360.ru'
 
 const styles = theme => ({
   smallAvatar: {
@@ -39,16 +39,14 @@ class MyAvatar extends React.Component {
   componentDidMount() {
     if (this.props.user || this.props.own) {
       var user = this.props.user
-      if (this.props.own && auth.isAuthenticated().user)
-        user = auth.isAuthenticated().user
+  
       this.setState({ user: user })
       this.prep(user)
     }
   }
   componentDidUpdate(prevProps) {
     if(prevProps.own !== this.props.own) {
-      this.setState({ user: auth.isAuthenticated().user })
-      this.prep(auth.isAuthenticated().user)
+
     }
     if(prevProps.user !== this.props.user) {
       this.setState({ user: this.props.user })
@@ -72,8 +70,7 @@ class MyAvatar extends React.Component {
       this.setState({ link: '/api/users/photo/', color: '#d9ce56' })
     if (this.props.whiteBorder) 
       this.setState({ color: '#fff' })
-    if (auth.isAuthenticated() && user._id === auth.isAuthenticated().user._id)
-      this.setState({ color: '#afc429' })
+
     if (user.avtr && user.avtr.toString().includes('#'))
       this.setState({ color: user.avtr })
     this.setState({ avatar_name: avatar_name })
@@ -82,7 +79,7 @@ class MyAvatar extends React.Component {
   render() {
     const { user, link, avatar_name } = this.state;
     const { classes, huge, large, small } = this.props;
-
+    console.log(link)
     if (user) {
       if (this.props.fresh) {
         return (<Avatar alt={user.name} src={this.props.fresh}

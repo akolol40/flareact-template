@@ -9,7 +9,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Chip from '@material-ui/core/Chip';
 import Divider from '@material-ui/core/Divider';
 import { QRCode } from "react-qr-svg";
-
+import MyAvatar from './MyAvatar';
 
 function ProfileWrapper(props) {
   const [profile, setProfile] = React.useState(false);
@@ -73,7 +73,9 @@ function ProfileWrapper(props) {
       {!error
         ? profile && <div style={{ padding: 15 }}>
           <div style={{ display: 'flex', flexDirection: 'row' }}>
-            
+            <div style={{ flex: 3 }}>
+              <MyAvatar user={profile} org={!profile.t ? 1 : 2} huge />
+            </div>
             <div style={{ flex: 9 }}>
               <List disablePadding dense>
                 <ListItem disableGutters style={{ padding: 0 }}>
@@ -87,9 +89,45 @@ function ProfileWrapper(props) {
               </List>
             </div>
           </div>
-          {profile.about && <div style={{ paddingTop: 10, fontSize: 14 }}>{profile.about}</div>}
+          {profile.about && <div style={{ paddingTop: 10, fontSize: 13, fontFamily: [
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      'Ubuntu',
+      '"Helvetica Neue"',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+      'Arial',
+      '"ヒラギノ角ゴ Pro W3"',
+      '"Hiragino Kaku Gothic Pro"',
+      'メイリオ',
+      'Meiryo',
+      '"ＭＳ Ｐゴシック"',
+      '"MS PGothic"'
+    ].join(',') }}>{profile.about}</div>}
           <div style={{ display: 'flex', flexDirection: 'row', paddingTop: 20 }}>
-            <div style={{ flex: 9 }}>
+            <div style={{ flex: 9, fontFamily: [
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      'Ubuntu',
+      '"Helvetica Neue"',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+      'Arial',
+      '"ヒラギノ角ゴ Pro W3"',
+      '"Hiragino Kaku Gothic Pro"',
+      'メイリオ',
+      'Meiryo',
+      '"ＭＳ Ｐゴシック"',
+      '"MS PGothic"'
+    ].join(',') }}>
               <Chip size="small" style={{ margin: 2 }} variant="outlined" 
                 label={'Новости и блоги'} onClick={() => {}} />
               <Chip size="small" style={{ margin: 2 }} variant="outlined" 
@@ -114,14 +152,68 @@ function ProfileWrapper(props) {
           </div>
           <Divider style={{ margin: '15px 0' }} light />
           <div style={{ display: 'flex', flexDirection: 'row', fontSize: 14, color: '#666' }}>
-            <div style={{ flex: 5, textAlign: 'center' }}>
+            <div style={{ flex: 5, textAlign: 'center', fontFamily: [
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      'Ubuntu',
+      '"Helvetica Neue"',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+      'Arial',
+      '"ヒラギノ角ゴ Pro W3"',
+      '"Hiragino Kaku Gothic Pro"',
+      'メイリオ',
+      'Meiryo',
+      '"ＭＳ Ｐゴシック"',
+      '"MS PGothic"'
+    ].join(',') }}>
               Деловая активность: <span style={{ fontWeight: 500 }}>{profile.rank}</span>
             </div>
-            <div style={{ flex: 5, textAlign: 'center' }}>
+            <div style={{ flex: 5, textAlign: 'center', fontFamily: [
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      'Ubuntu',
+      '"Helvetica Neue"',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+      'Arial',
+      '"ヒラギノ角ゴ Pro W3"',
+      '"Hiragino Kaku Gothic Pro"',
+      'メイリオ',
+      'Meiryo',
+      '"ＭＳ Ｐゴシック"',
+      '"MS PGothic"'
+    ].join(',') }}>
               Деловая репутация: <span style={{ fontWeight: 500 }}>{profile.rep}</span>
             </div>
           </div>
-          <div style={{ paddingTop: 15 }}>
+          <div style={{ paddingTop: 15, fontFamily: [
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      'Ubuntu',
+      '"Helvetica Neue"',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+      'Arial',
+      '"ヒラギノ角ゴ Pro W3"',
+      '"Hiragino Kaku Gothic Pro"',
+      'メイリオ',
+      'Meiryo',
+      '"ＭＳ Ｐゴシック"',
+      '"MS PGothic"'
+    ].join(',') }}>
             <Chip size="small" style={{ margin: 2 }} label={'Сведения ФНС'}
               onClick={() => {}} />
             <Chip size="small" style={{ margin: 2 }} label={'Сведения Росстата'}
